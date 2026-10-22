@@ -1,0 +1,23 @@
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:48px;padding:0 18px;border-radius:12px;background:var(--cell);font-weight:600;position:relative}
+.btn.primary{background:var(--accent);color:#fff}
+.btn.danger{background:var(--bad);color:#fff}
+.btn.big{min-height:56px;font-size:1.1rem;width:100%}
+.btn:disabled{opacity:.4}
+.btn:active,.key:active{transform:scale(.96)}
+.icon-btn{width:48px;height:48px;border-radius:12px;background:var(--cell);display:flex;align-items:center;justify-content:center}
+.badge{font-style:normal;font-size:.75rem;background:var(--accent);color:#fff;border-radius:10px;padding:1px 7px}
+.cell{display:flex;align-items:center;justify-content:center;border-radius:8px;font-weight:700;font-size:clamp(16px,5.5vw,26px);font-variant-numeric:tabular-nums;background:transparent;color:var(--muted)}
+.cell.num{background:var(--cell);color:var(--fg)}
+.cell.given{background:var(--given)}
+.cell.blank{border:2px solid var(--line);cursor:pointer}
+.cell.sel{border-color:var(--accent);box-shadow:0 0 0 2px var(--accent)}
+.cell.hinted{color:var(--accent)}
+.cell.bad{border:2px dashed var(--bad);color:var(--bad)}
+.cell.opc{color:var(--accent);font-size:clamp(18px,6vw,30px)}
+.shake{animation:shake .3s}
+@keyframes shake{25%{transform:translateX(-6px)}75%{transform:translateX(6px)}}
+.key{min-height:52px;border-radius:10px;background:var(--panel);border:1px solid var(--line);font-size:1.3rem;font-weight:700;display:flex;align-items:center;justify-content:center}
+.stars{display:flex;justify-content:center;gap:6px}
+.stars svg{width:44px;height:44px;color:var(--cell)}
+.stars svg.on{color:#facc15}
+input[type=range]{flex:1;accent-color:var(--accent)}

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>Math Crossword</title>
+<link rel="icon" href="assets/favicon.svg">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/layout.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/themes.css">
+</head>
+<body data-theme="dark">
+<main id="app">
+
+<section id="home" class="screen active">
+  <div class="home-card">
+    <svg class="logo"><use href="assets/icons/icons.svg#i-grid"/></svg>
+    <h1>Math Crossword</h1>
+    <p id="home-level" class="muted"></p>
+    <button class="btn primary big" data-act="play"><svg><use href="assets/icons/icons.svg#i-play"/></svg><span>Play</span></button>
+    <button class="btn" data-act="settings"><svg><use href="assets/icons/icons.svg#i-settings"/></svg><span>Settings</span></button>
+  </div>
+</section>
+
+<section id="game" class="screen">
+  <header class="hud">
+    <button class="icon-btn" data-act="pause" aria-label="Pause"><svg><use href="assets/icons/icons.svg#i-pause"/></svg></button>
+    <div class="hud-mid"><b id="lvl"></b><span id="diff" class="muted"></span></div>
+    <div class="timer"><svg><use href="assets/icons/icons.svg#i-clock"/></svg><span id="timer">0:00</span></div>
+  </header>
+  <div id="timebar"><i></i></div>
+  <div id="board"></div>
+  <div class="tools">
+    <button class="btn" data-act="hint"><svg><use href="assets/icons/icons.svg#i-hint"/></svg><span>Hint</span><em id="hints" class="badge"></em></button>
+    <button class="btn" data-act="retry"><svg><use href="assets/icons/icons.svg#i-retry"/></svg><span>Retry</span></button>
+  </div>
+  <div id="numpad"></div>
+</section>
+
+</main>
+
+<div class="modal" id="m-pause"><div class="sheet">
+  <h2>Paused</h2>
+  <button class="btn primary big" data-act="resume"><svg><use href="assets/icons/icons.svg#i-play"/></svg><span>Resume</span></button>
+  <button class="btn" data-act="retry"><svg><use href="assets/icons/icons.svg#i-retry"/></svg><span>Retry</span></button>
+  <button class="btn" data-act="settings"><svg><use href="assets/icons/icons.svg#i-settings"/></svg><span>Settings</span></button>
+  <button class="btn" data-act="home"><svg><use href="assets/icons/icons.svg#i-home"/></svg><span>Home</span></button>
+</div></div>
+
+<div class="modal" id="m-win"><div class="sheet">
+  <h2>Level clear</h2>
+  <div class="stars" id="win-stars"></div>
+  <p class="muted" id="win-info"></p>
+  <button class="btn primary big" data-act="next"><svg><use href="assets/icons/icons.svg#i-next"/></svg><span>Next</span></button>
+  <button class="btn" data-act="home"><svg><use href="assets/icons/icons.svg#i-home"/></svg><span>Home</span></button>
+</div></div>
+
+<div class="modal" id="m-fail"><div class="sheet">
+  <h2>Time up</h2>
+  <p class="muted">Same puzzle, try again.</p>
+  <button class="btn primary big" data-act="retry"><svg><use href="assets/icons/icons.svg#i-retry"/></svg><span>Try again</span></button>
+  <button class="btn" data-act="home"><svg><use href="assets/icons/icons.svg#i-home"/></svg><span>Home</span></button>
+</div></div>
+
+<div class="modal" id="m-settings"><div class="sheet">
+  <h2>Settings</h2>
+  <div class="row"><span>Sound</span><button class="btn" id="set-sound"></button></div>
+  <div class="row"><span>Volume</span><input type="range" id="set-vol" min="0" max="100"></div>
+  <div class="row"><span>Theme</span><button class="btn" id="set-theme"></button></div>
+  <div class="row"><span>Progress</span><button class="btn danger" id="set-reset">Reset</button></div>
+  <button class="btn primary" data-act="settings-close"><svg><use href="assets/icons/icons.svg#i-close"/></svg><span>Close</span></button>
+</div></div>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
